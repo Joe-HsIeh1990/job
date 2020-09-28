@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        * {
+            box-sizing: padding-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .fullwidth {
+            width: 1920px;
+        }
+
+        .container {
+            max-width: 1920px;
+            width: 1200px;
+            margin: auto;
+            margin-bottom: 72px;
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .my-1 {
+            margin-top: 24px;
+            margin-bottom: 48px;
+        }
+
+        .my-2 {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+
+
+        .mb {
+            margin-bottom: 10px;
+        }
+
+        .mb2 {
+            margin-bottom: 32px;
+        }
+
+        .mb3 {
+            margin-bottom: 8px;
+        }
+
+        .m-auto {
+            margin: auto;
+        }
+
+        .t-center {
+            text-align: center;
+        }
+
+        .statusstyle {
+            font-size: 32px;
+            line-height: 45px;
+            margin-right: 16px;
+            font-weight: bolder;
+        }
+
+        .statuslittle {
+            font-size: 24px;
+            line-height: 32px;
+            color: #A00404;
+            margin-top: 7px;
+        }
+
+        .title_name {
+            width: 288px;
+            height: 180px;
+            margin-top: 48px;
+            font-size: 80px;
+            line-height: 90px;
+            letter-spacing: 8px;
+        }
+
+        .avatarbox {
+            width: 324px;
+            margin-bottom: 48px;
+        }
+        .avatarbox img{
+            border-radius: 50%;
+        }
+
+        /* status */
+        .mystatus {
+            width: 239px;
+        }
+
+        .myname {
+            width: 438PX;
+            height: 105px;
+            margin-bottom: 24px;
+        }
+
+        .myname p {
+            font-size: 24px;
+            line-height: 36px;
+
+        }
+
+        .myskill {
+            width: 696px;
+            height: 105px;
+            margin-bottom: 72px;
+        }
+
+        .myskill p {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        /*  */
+        .myschool {
+            width: 211px;
+        }
+
+        /* circle */
+        .circle {
+            width: 16px;
+            height: 16px;
+            margin-right: 16px;
+            background-color: #96A9C4;
+            border-radius: 50%;
+            margin-left: 16px;
+            margin-top: 9px;
+        }
+
+        .circle_place {
+            position: relative;
+            height: 78px;
+            width: 16px;
+            margin-top: 10px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .circle_place div:nth-child(1) {
+            width: 16px;
+            height: 16px;
+            background-color: #96A9C4;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+        }
+
+        .circle_place div:nth-child(2) {
+            height: 66px;
+            width: 2px;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 45%;
+            rotate: 180deg;
+            background-color: #96A9C4;
+        }
+
+        .circle_place div:nth-child(3) {
+            width: 16px;
+            height: 16px;
+            background-color: #96A9C4;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* unity */
+        .unity div:nth-child(1) {
+            height: 33px;
+            width: 603px;
+            margin-bottom: 32px;
+        }
+
+        .unity div:nth-child(1) p {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        .unity div:nth-child(2) {
+            height: 33px;
+            width: 603px;
+            margin-bottom: 72px;
+        }
+
+        .unity div:nth-child(2) p {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        .post {
+            width: 1920px;
+            height: 494px;
+            position: relative;
+            margin-bottom: 72px;
+        }
+
+        .bgline {
+            width: 1920px;
+            height: 360px;
+            position: absolute;
+            background-color: #96A9C4;
+            top: 67px;
+            z-index: 1;
+        }
+
+        .placemenu {
+            width: 1200px;
+            height: 494px;
+            position: absolute;
+            background-color: #415165;
+            z-index: 2;
+            top: 0;
+            left: 360px;
+        }
+
+        .skill {
+            width: 159px;
+            margin: 0 auto;
+        }
+
+        .skill h2 {
+            margin-top: 24px;
+            margin-bottom: 8px;
+            margin-right: 16px;
+            font-size: 32px;
+            line-height: 45px;
+            color: #FFFFFF;
+        }
+
+        .skill small {
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            margin-bottom: 14px;
+            margin-top: 31px;
+        }
+
+        .place_line {
+            width: 996px;
+            height: 2px;
+            background-color: #FFFFFF;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        .skill_num {
+
+            box-sizing: border-box;
+            width: 216px;
+            height: 312.5px;
+            border-left: 1px solid #96A9C4;
+            margin: 0 auto;
+        }
+
+        .skill_num p {
+            font-size: 24px;
+            line-height: 36px;
+            color: #FFFFFF;
+            margin-left: 24px;
+            white-space: nowrap;
+        }
+
+        /* work */
+        .work {
+            width: 360px;
+        }
+
+        /* travel */
+        .travel {
+            width: 666px;
+            border-left: 1px solid rgb(186, 187, 189);
+            margin-top: 6px;
+            margin-left: 24px;
+            margin-bottom: 72px;
+            box-sizing: border-box;
+
+        }
+
+        .travel h3 {
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: bolder;
+            margin-left: 24px;
+            height: 33px;
+        }
+
+        .travel>img {
+            width: 89.5px;
+            height: 66.85px;
+            margin-left: 24px;
+            margin-bottom: 8.15px;
+        }
+
+        .travel div {
+            width: 642px;
+            margin-left: 24px;
+        }
+
+        .travel div p {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        #simt {
+            width: 72px;
+            height: 73px;
+            margin-bottom: 8px;
+        }
+
+        .travel>p {
+            font-size: 20px;
+            line-height: 30px;
+            margin-left: 24px;
+        }
+
+        /* footer */
+        footer {
+            height: 401px;
+            background-color: #415165;
+        }
+
+        .cell {
+            width: 354px;
+            height: 45px;
+            margin-top: 31px;
+            margin-bottom: 8px;
+        }
+
+        .cell h2 {
+            font-size: 32px;
+            line-height: 45px;
+            height: 45px;
+            color: #FFFFFF;
+        }
+
+        .cell p {
+            font-size: 24px;
+            line-height: 32px;
+            margin-top: 7px;
+            margin-bottom: 6px;
+            margin-left: 16px;
+            color: #FFFFFF;
+        }
+
+        footer div:nth-child(2) {
+            width: 1200px;
+            height: 2px;
+            background-color: #FFFFFF;
+        }
+
+        footer>p {
+            font-size: 24px;
+            line-height: 36px;
+            height: 33px;
+            margin-bottom: 16px;
+            color: #ffff;
+        }
+
+        footer a {
+            font-size: 24px;
+            line-height: 36px;
+            height: 33px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: #ffff;
+        }
+
+        footer img {
+            height: 48px;
+            width: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fullwidth m-auto">
+        <div class="container m-auto">
+            <div class="title_name">
+                Joe
+                Hsieh
+            </div>
+            <div class="line my-1">
+            </div>
+            <div class="avatarbox">
+                <img src="images/兩吋底ok2.jpg" alt="">
+            </div>
+            <!-- status -->
+            <div class="mystatus d-flex" style="height: 45px;">
+                <h2 class="statusstyle">個人資料</h2>
+                <small class="statuslittle">PROFILE</small>
+            </div>
+            <div class="line my-2"></div>
+            <div class="d-flex">
+                <div class="circle"></div>
+                <div>
+                    <div class="myname">
+                        <p>
+                            謝為仲&nbsp; Joe&nbsp;Hsieh
+                        </p>
+                        <p>1990-</p>
+                        <p>前理賠人員&nbsp;/&nbsp;接案網頁工程師&nbsp;/&nbsp;行銷企劃</p>
+                    </div>
+                    <div class="myskill">
+                        <p>JD行銷工作室業務及全端工程師&nbsp;/&nbsp;兼職協助販售產險</p>
+                        <p>程式撰寫及業務開發:</p>
+                        <p>前端頁面設計、後端資料庫設計、開發接案客源(以店家或企業為主)。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- school -->
+            <div class="d-flex myschool" style="height: 45px;">
+                <h2 class="statusstyle">學歷</h2>
+                <small class="statuslittle">EDUCATION</small>
+            </div>
+            <div class="line my-2"></div>
+            <div class="d-flex">
+                <div class="circle_place">
+                    <div></div>
+                </div>
+                <div class="unity">
+                    <div class="unity_1">
+                        <p>私立大葉大學 運動管理事業 學士學位 | 2011－2015</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- position -->
+        <div class="post ">
+            <div class="bgline"></div>
+            <div class="placemenu ">
+                <div class="skill d-flex t-center">
+                    <h2 class="statustyle">技能</h2>
+                    <small class="statuslittle">SKILLS</small>
+                </div>
+                <div class="place_line"></div>
+                <div class="skill_num">
+                    <p class="mb">HTML、CSS、JavaScript</p>
+                    <p class="mb">Vue</p>
+                    <p class="mb">SCSS</p>
+                    <p class="mb">Adobe Photoshop</p>
+                    <p class="mb">PHP、MySQL</p>
+                    <p class="mb">車險理賠工作內容</p>
+                    <p class="mb">業務開發</p>
+                </div>
+            </div>
+        </div>
+        <div class="fullwidth m-auto">
+            <div class="container m-auto">
+                <!-- work -->
+                <div class="d-flex" style="height: 45px;">
+                    <h2 class="statusstyle">工作經驗</h2>
+                    <small class="statuslittle">WORK EXPERIENCE</small>
+                </div>
+                <div class="line mb2"></div>
+                <div class="travel">
+                    <h3 class="mb">立委服務處 助理&nbsp;|&nbsp;2015/08－2017/01</h3>
+                    <div class="mb">
+                        <p>在立委服務處的這段時間，接觸到許多北北屯區的民眾，平時協助他們處理一些地方事務問題，
+                            並代替委員出席紅白場，因此認識的許多人，也為後來的工作帶來額外的收入。</p>
+                    </div>
+                    <h3 class="mb">華南產物 車險理賠部 | 2017/3－2018/03</h3>
+                    <div class="mb">
+                        <p>
+                            因太太的緣故進入的產險業這塊領域，太太是第一產物的車險核保人員，當時剛回台北找尋工作，在太太的推薦下應徵了理賠人員一職，
+                            在華南時候打下了一定的理賠基礎，從勘車、接車財損體傷案件等等都是在這時磨練出來的，這時期也有間接販售些產險商品給周遭有需要的人或客戶，
+                            並逐漸對營業人員產生了興趣，之後與公司協商希望調任營業人員，並成功取得文山區營業人員一職，但後來因太太堅持希望回到台中娘家生活，而放棄了這個機會。
+                        </p>
+                    </div>
+                    <h3 class="mb">南山產物 理賠人員 | 2018/3－2019/05</h3>
+                    <div class="mb">
+                        <p>
+                            到了台中後進入南山產物，在這裡開始無差別接案並接觸了許多重大案件，在這期間茵公司的體制不同，
+                            開始了解部分民事相關行為，如:假扣押、法院上的答辯等等。其中在工作上得到的最大成就，就是客戶對我的認同，
+                            即使案件結案後，有關於車險相關問題也會找我商談，也希望未來我能夠替他們服務協助他們購買車險產品。
+                            <br/>
+                            直到2019年4月發現頸椎間盤突出，去進行手術開刀，但後續因休養時間較長，也不希望造成同仁之間的困擾而離開南山產物。
+                        </p>
+                    </div>
+                    <h3 class="mb">待業 | 2019/5－至今</h3>
+                    <div>
+                        <p>
+                            離開產險公司後，原本打算在家中休養2~3個月，並在這段期間接觸些新領域的知識，例如:前後端工程、Unity等等有關軟體的程式語言。
+                            <br>
+                            學成後與友人合作進行接案的工作，在接案的工作中，我負責的項目主要是業務及網頁工程開發，業務部份除了友人的轉介外，主要是依靠陌生開發店家為主，
+                            後來友人到公司上班後，接案的工作也轉型為兼職性質。
+                            <br>
+                            待業期間內，之前華南及南山的舊客戶始終持續保持著聯繫，他們認可我<small style="color: red;">理賠的專業</small>也希望未來我能替他們服務，加上自己對於營業人員一職，抱持著熱忱的態度，而開始尋找產險營業人員一職的工作。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="fullwidth m-auto d-flex column align-items-center">
+            <div class="cell d-flex">
+                <h2>聯絡方式</h2>
+                <p>CONTACT METHOD</p>
+            </div>
+            <div class="mb2"></div>
+            <p>Mail&nbsp;：&nbsp;as6525776@gmail.com</p>
+            <p>Phone&nbsp;：&nbsp;0980061307</p>
+            <p>
+                Taichung,&nbsp;Taiwan</p>
+        </footer>
+</body>
+</body>
+
+</html>
